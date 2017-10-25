@@ -1,7 +1,7 @@
 var figure = {
-    "frames": [], 
+    "frames": [],
     "layout": {
-        "autosize": true, 
+        "autosize": true,
         "undefined": {
             "rangeslider": {
                 "visible": true
@@ -9,11 +9,13 @@ var figure = {
         }, 
         "yaxis": {
             "range": [
-                -9.322652722222225, 
+                -9.322652722222225,
                 177.13040172222222
+                // -1,
+                // 2.4
             ], 
-            "type": "linear", 
-            "autorange": true
+            "type": "linear", // log
+            // "autorange": true
         }, 
         "dragmode": "zoom", 
         "showlegend": true, 
@@ -34,7 +36,7 @@ var figure = {
                 "autorange": true
             }
         }, 
-        "title": "Network Value to Transaction Ratio", 
+        "title": "Network Value to Transactions Ratio", 
         "hovermode": "closest"
     }, 
     "data": [
