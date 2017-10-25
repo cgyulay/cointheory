@@ -8,21 +8,20 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300" rel="stylesheet" />
     <link rel="icon" href="img/favicon.png"/>
 
-    <script
-      src="http://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"> -->
+
+    <script type="text/javascript" src="js/plotlyjs-bundle.js"></script>
+    <script type="text/javascript" src="js/figure.js"></script>
+
+    </script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -41,7 +40,6 @@
         </div>
         <div>
             Insights and Charts for Cryptocurrency Investors<br>
-            <!-- <a href="http://woobull.com">← woobull.com</a> -->
         </div>
     </div>
 
@@ -49,13 +47,49 @@
         <div class="row">
             <h1 class="center">NVT Ratio</h1>
 
-            <ul class="nav nav-tabs">
+            <div id="c09f5d42-9b45-4cc6-98e1-c099558019e7" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
+            <script type="text/javascript">
+                (function(){
+                    window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+
+                    var gd = document.getElementById('c09f5d42-9b45-4cc6-98e1-c099558019e7')
+                    var resizeDebounce = null;
+
+                    function resizePlot() {
+                        var bb = gd.getBoundingClientRect();
+                        Plotly.relayout(gd, {
+                            width: bb.width,
+                            height: bb.height
+                        });
+                    }
+
+                    
+                    window.addEventListener('resize', function() {
+                        if (resizeDebounce) {
+                            window.clearTimeout(resizeDebounce);
+                        }
+                        resizeDebounce = window.setTimeout(resizePlot, 100);
+                    });
+                    
+
+                    
+                    Plotly.plot(gd,  {
+                        data: figure.data,
+                        layout: figure.layout,
+                        frames: figure.frames,
+                        config: {"mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A", "linkText": "Export to plot.ly", "showLink": true}
+                    });
+                    
+               }());
+            </script>
+
+            <!-- <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#menu1">Bitcoin</a></li>
                 <li><a data-toggle="tab" href="#menu2">Ethereum</a></li>
-                <!-- <li><a data-toggle="tab" href="#menu2">Menu 2</a></li> -->
-            </ul>
+                <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+            </ul> -->
 
-            <div class="tab-content">
+            <!-- <div class="tab-content">
                 <div id="menu1" class="tab-pane fade in active">
                     <div class="center" id="chart">
                         <div>
@@ -70,12 +104,13 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div id="menu2" class="tab-pane fade">
+                <div id="menu2" class="tab-pane fade">
                     <h3>Menu 2</h3>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                </div> -->
-            </div>
-            <div class="center">(Ratio has been smoothed using moving averages, 14 day forward and 14 day backward facing)</div>
+                </div>
+            </div> -->
+
+            <div class="center">(Ratio has been smoothed using 7 day moving averages.</div>
         </div>
 
         <hr>
@@ -145,10 +180,11 @@
             <i class="fa fa-linkedin-square fa-lg"></i> <a href="https://www.linkedin.com/in/homanmohammadi">Homan Mohammadi</a><br><br>
             <i class="fa fa-bitcoin fa-lg"></i> : Tipjar : 1BdiF5Z21jMMnJipty7VffxdTJQyYMQEzj<br>
             <img src="https://blockchain.info/qr?data=1BdiF5Z21jMMnJipty7VffxdTJQyYMQEzj&size=128">     </div>
-        <!-- <hr> -->
+        <hr>
         <!-- <div id="credits"><a href="http://woobull.com">Woobull.com</a></div> -->
-        <br>
-        <br>
+        <p style="color: #999; font-size: 9pt;" class="center">Please note the information provided here is for solely educational purposes and should not be construed as financial advice.</p>
+        <!-- <br>
+        <br> -->
     </div>
 </body>
 </html>
