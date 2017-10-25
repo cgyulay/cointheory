@@ -1,5 +1,6 @@
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
-@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
+// @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css);
+// @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js)
 
 html {
   font-size: 14px;
@@ -8,12 +9,14 @@ html {
 }
 
 #navbar {
-    background: #111;
+    background: #333;
     padding: 10px;
     color: #FFF;
-}   
+}
+
 #navheader {
 }
+
 #navheader a,
 #navheader a:link,
 #navheader a:visited,

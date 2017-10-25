@@ -47,54 +47,20 @@
 
     <div class="container">
         <div class="row">
-            <h1 class="center">NVT Ratio</h1>
+            <h1 class="center">NVT Ratio Caveats</h1>
 
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#menu1">Bitcoin</a></li>
-                <li><a data-toggle="tab" href="#menu2">Ethereum</a></li>
-                <!-- <li><a data-toggle="tab" href="#menu2">Menu 2</a></li> -->
-            </ul>
+            <p>Though the network value to transaction ratio (NVT) is a useful measure for indicating the relative value of a cryptoasset, calculating the exact transaction volume is difficult because of transactional change. On the blockchain, there are no balances associated with any address or user. Instead, there is only a history of transactions. If user A wanted to send user B some Bitcoin, for example, the input to the transaction would be one of (or some series) of Bitcoin amounts from previously received transactions, not the <em>exact</em> amount. Thus, there will be some change to return to the initial sender in the transaction. If the change is returned to the sender's address, then it is straightforward to separate the payment from the change and to determine the transaction volume. However, if two new addresses are used for destination and change, it is not possible to determine transaction volume with 100% certainty. We and others like <a href="https://blockchain.info/">Blockchain.info</a> are developing heuristics to tighten these estimations. This is an ongoing open question and area of research.</p>
 
-            <div class="tab-content">
-                <div id="menu1" class="tab-pane fade in active">
-                    <div class="center" id="chart">
-                        <div>
-                            <iframe class="embed-responsive-item" width="1000" height="550" frameborder="0" style="margin-left:-80px" scrolling="no" src="http://plot.ly/~gyulash/5.embed"></iframe>
-                        </div>
-                    </div>
-                </div>
-                <div id="menu2" class="tab-pane fade">
-                    <div class="center" id="chart">
-                        <div>
-                            <iframe class="embed-responsive-item" width="1000" height="550" frameborder="0" style="margin-left:-80px" scrolling="no" src="http://plot.ly/~gyulash/5.embed"></iframe>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div id="menu2" class="tab-pane fade">
-                    <h3>Menu 2</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-                </div> -->
-            </div>
-            <div class="center">(Ratio has been smoothed using moving averages, 14 day forward and 14 day backward facing)</div>
+            <p>As of right now, we do not employ any heuristics on our data to estimate payment vs. change. We only remove the change if the change address is 100% knowable from the transaction details. This means our NVT overestimates transaction volume. This may at first seem like a problem, but because these behaviors seem consisten over time, NVT still functions as a useful <em>relative</em> indicator. As stated, our goals are to better estimate transaction volume and to better understand change patterns across currencies so cross-currency NVT comparison becomes more viable.</p>
         </div>
 
         <hr>
 
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <h3>Notes about NVT Ratio</h3>
-
-                <p>NVT Ratio (Network Value to Transactions Ratio) is similar to the PE Ratio found in equity valuation.</p>
-
-                <p>A high NVT indicates that the cryptoasset's on-chain transaction volume is valued more highly. This generally means that the network is experiencing rapid growth and its future returns are valued more highly by the market, or that there is a potential bubble in price if this increased valuation is unfounded.</p>
-
-                <p>Our project is to try to better separate these situations through better analysis of transaction activity and fundamental drivers.</p>
-
-                <p>NVT is calculated by the network value (total market capitalization) divided by the transaction volume (in dollars) on the blockchain. The transaction volume is only an estimate derived from activity seen on blockchains. All data is gathered from block explorers by <a href="https://coinmetrics.io/data-downloads/">Coin Metrics</a>.</p>
-
                 <h3>Related Articles</h3>
                 <ul>
-                    <li><a href="http://woobull.com/introducing-nvt-ratio-bitcoins-pe-ratio-use-it-to-detect-bubbles/" target="_blank">Introducing NVT Ratio (Bitcoin's PE Ratio), use it to detect bubbles</a></li>
+                    <li><a href="https://coinmetrics.io/mtv-caveat/" target="_blank">An important network value to transaction ratio caveat</a></li>
 
                     <!-- <li><a href="https://www.norupp.com/willy-woo-interview-the-nvt-ratio-and-future-of-cryptocurrencies/" target="_blank">Willy Woo Interview: The NVT Ratio and Future of Cryptocurrencies</a></li> -->
 
@@ -108,7 +74,7 @@
                         Cryptoassets's PE ratio. Detects when an asset is over or undervalued.<br>
                         <br>
                     </li>
-                    <li><strong><a href="http://cointheory.io/nvt-caveats.html">NVT Ratio Caveats</a></strong><br>
+                    <li><strong><a href="nvt-caveats">NVT Ratio Caveats</a></strong><br>
                         Calculating true transaction volume from the blockchain is a tough problem. Here's why.<br>
                         <br>
                     </li>
