@@ -47,11 +47,9 @@
 
     <div class="container">
         <div class="row">
-            <h1 class="center">NVT Ratio Caveats</h1>
+            <h1 class="center">NVT Ratio Correlations</h1>
 
-            <p>Though the network value to transaction ratio (NVT) is a useful measure for indicating the relative value of a cryptoasset, calculating the exact transaction volume is difficult because of transactional change. On the blockchain, there are no balances associated with any address or user. Instead, there is only a history of transactions. If user A wanted to send user B some Bitcoin, for example, the input to the transaction would be one of (or some series) of Bitcoin amounts from previously received transactions, not the <em>exact</em> amount. Thus, there will be some change to return to the initial sender in the transaction. If the change is returned to the sender's address, then it is straightforward to separate the payment from the change and to determine the transaction volume. However, if two new addresses are used for destination and change, it is not possible to determine transaction volume with 100% certainty. An example of such a transaction can be seen on the Bitcoin blockchain <a href="https://blockchain.info/tx/aa5eb27652bd85dc444ea2508bf0ff6ff1b484141e2d7e69f31976fafb21e06e">here</a>. We and others like <a href="https://blockchain.info/">Blockchain.info</a> are developing heuristics to tighten these estimations. This is an ongoing open question and area of research.</p>
-
-            <p>As of right now, we do not employ any heuristics on our data to estimate payment vs. change. We only remove the change if the change address is 100% knowable from the transaction details. This means our NVT overestimates transaction volume and provides a lower bound on true underlying NVT. This may at first seem like a problem, but because these behaviors are consistent over time, NVT still functions as a useful <em>relative</em> indicator. As stated, our goals are to better estimate transaction volume and to better understand change patterns across currencies so cross-currency NVT comparison becomes more viable.</p>
+            <p>Check back soon for more!</p>
         </div>
 
         <hr>
@@ -60,10 +58,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <h3>Related Articles</h3>
                 <ul>
-                    <li><a href="https://coinmetrics.io/mtv-caveat/" target="_blank">An important network value to transaction ratio caveat</a></li>
-
-                    <!-- <li><a href="https://www.norupp.com/willy-woo-interview-the-nvt-ratio-and-future-of-cryptocurrencies/" target="_blank">Willy Woo Interview: The NVT Ratio and Future of Cryptocurrencies</a></li> -->
-
+                    <li><a href="https://www.sifrdata.com/cryptocurrency-correlation-matrix/" target="_blank">90-Day Cryptocurrency Correlation Matrix</a></li>
                 </ul>
             </div>
 
